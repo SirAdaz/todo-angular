@@ -1,0 +1,11 @@
+<hr>
+<h2>Todo-List</h2>
+<app-add-task [nomTaskFormEnfant]="taskForm" (onNomTaskFormEnfant)="ajouterTask($event)"></app-add-task>
+
+  @for (item of taches; track $index) {
+    @if (item.visible) {
+      <app-card [item]="item"></app-card>
+    }
+  }
+
+  

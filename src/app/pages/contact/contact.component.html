@@ -1,0 +1,24 @@
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="contactForm.name" >
+  </div>
+  
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="email" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="contactForm.email">
+  </div>
+  
+  <div class="input-group">
+    <input type="tel" class="form-control" placeholder="email" aria-label="tel" aria-describedby="basic-addon2" [(ngModel)]="contactForm.tel">
+  </div>
+  <button (click)="ajouterContact()" class="btn btn-primary" >Ajouter</button>
+  @for (item of contacts; track $index) {
+    @if (item.visible) {
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <h5 class="card-title">{{item.email}}</h5>
+          <h5 class="card-title">{{item.tel}}</h5>
+        </div>
+        <button (click)="deleteContact(item)" class="btn btn-danger" >Supprimer</button>
+      </div>   
+    }
+  } 
